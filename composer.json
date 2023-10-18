@@ -1,0 +1,33 @@
+{
+    "name": "norman-huth/laravel-email-log",
+    "license": "MIT",
+    "support": {
+        "source": "https://github.com/Muetze42/laravel-email-log",
+        "docs": "https://github.com/Muetze42/laravel-email-log#readme",
+        "issues": "https://github.com/Muetze42/laravel-email-log/issues"
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/events": "^8.0|^9.0|^10.0",
+        "illuminate/mail": "^8.0|^9.0|^10.0",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "authors": [
+        {
+            "name": "Norman Huth",
+            "email": "norman@huth.it"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NormanHuth\\LaravelEmailLog\\Providers\\PackageServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "NormanHuth\\LaravelEmailLog\\": "src/"
+        }
+    }
+}
