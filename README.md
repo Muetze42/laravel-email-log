@@ -1,11 +1,27 @@
 # Laravel Email Log
 
-Save sent emails in the database.
+Save sent emails in the database.  
+If there is an authenticated user while sending a mail, it will be saved as `authenticatable` (polymorphic relation).
 
-Todo:
+## Install
 
-* Create Documentation \/ README
-* Create Laravel Nova Resource (or Field Array?)
+```bash
+composer require norman-huth/laravel-email-log
+```
+
+### Optional: Publish
+
+#### Publish [config file](config/email-log.php)
+
+```bash
+php artisan vendor:publish --provider="NormanHuth\LaravelEmailLog\Providers\PackageServiceProvider" --tag="email-log-config"
+```
+
+#### Publish [Migration](database/migrations/2023_10_18_000000_create_email_logs_table.php)
+
+```bash
+php artisan vendor:publish --provider="NormanHuth\LaravelEmailLog\Providers\PackageServiceProvider" --tag="email-log-migrations"
+```
 
 ## Model
 
@@ -48,4 +64,4 @@ public function authenticatable(): MorphTo
 ### SoftDeletes
 
 The [softDeletes](https://laravel.com/docs/10.x/migrations#column-method-softDeletes) column is present in the
-migration, but the [SoftDeletes Trait](https://laravel.com/docs/10.x/eloquent#soft-deleting) is not in the Model.
+migration, but the [SoftDeletes Trait](https://laravel.com/docs/10.x/eloquent#soft-deleting) is not using by the Model.
