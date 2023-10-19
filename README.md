@@ -23,6 +23,24 @@ php artisan vendor:publish --provider="NormanHuth\LaravelEmailLog\Providers\Pack
 php artisan vendor:publish --provider="NormanHuth\LaravelEmailLog\Providers\PackageServiceProvider" --tag="email-log-migrations"
 ```
 
+## Usage
+
+It’s a [Laravel Eloquent Model](https://laravel.com/docs/10.x/eloquent).
+
+````php
+use NormanHuth\LaravelEmailLog\Models\EmailLog::class;
+
+return EmailLog::all();
+
+return EmailLog::find(1);
+
+return EmailLog::find(1)->authenticatable;
+````
+
+## Laravel Nova
+
+For a [Laravel Nova](https://nova.laravel.com/) integration reade [NOVA.md](NOVA.md)
+
 ## Model
 
 ```javascript
