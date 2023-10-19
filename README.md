@@ -39,7 +39,7 @@ return EmailLog::find(1)->authenticatable;
 
 ## Laravel Nova
 
-For a [Laravel Nova](https://nova.laravel.com/) integration reade [NOVA.md](NOVA.md)
+For a [Laravel Nova](https://nova.laravel.com/) integration read [NOVA.md](NOVA.md)
 
 ## Model
 
