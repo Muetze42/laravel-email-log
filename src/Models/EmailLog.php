@@ -34,12 +34,15 @@ class EmailLog extends Model
     protected function casts(): array
     {
         return [
-            'is_pre_order' => 'bool',
-            'is_posa' => 'bool',
-            'is_ptr_allowed' => 'bool',
-            'is_returnable' => 'bool',
-            'purchase_price' => 'decimal:2',
-            'supplier_price' => 'decimal:2',
+            'from' => 'array',
+            'to' => 'array',
+            'bbc' => 'array',
+            'cc' => 'array',
+            'reply_to' => 'array',
+            'headers' => 'array',
+            'attachments' => 'array',
+            'is_html' => 'bool',
+            'priority' => 'int',
         ];
     }
 
