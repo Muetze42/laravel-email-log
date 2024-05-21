@@ -8,9 +8,9 @@
     },
     "require": {
         "php": "^8.0",
-        "illuminate/events": "^8.0|^9.0|^10.0|^11.0",
-        "illuminate/mail": "^8.0|^9.0|^10.0|^11.0",
-        "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
+        "illuminate/events": "^11.0",
+        "illuminate/mail": "^11.0",
+        "illuminate/support": "^11.0"
     },
     "authors": [
         {
@@ -29,5 +29,8 @@
         "psr-4": {
             "NormanHuth\\LaravelEmailLog\\": "src/"
         }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.15"
     }
 }
