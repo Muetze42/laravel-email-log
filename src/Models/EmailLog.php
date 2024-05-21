@@ -12,7 +12,7 @@ class EmailLog extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'subject',
         'body',
         'from',
@@ -27,21 +27,21 @@ class EmailLog extends Model
     ];
 
     /**
-     * The attributes that should be cast.
+     * Get the attributes that should be cast.
      *
-     * @var array<string, string>
+     * @return array<string, string>
      */
-    protected $casts = [
-        'from' => 'array',
-        'to' => 'array',
-        'bbc' => 'array',
-        'cc' => 'array',
-        'reply_to' => 'array',
-        'headers' => 'array',
-        'attachments' => 'array',
-        'is_html' => 'bool',
-        'priority' => 'int',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'is_pre_order' => 'bool',
+            'is_posa' => 'bool',
+            'is_ptr_allowed' => 'bool',
+            'is_returnable' => 'bool',
+            'purchase_price' => 'decimal:2',
+            'supplier_price' => 'decimal:2',
+        ];
+    }
 
     /**
      * Get the parent authenticatable model.

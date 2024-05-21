@@ -35,9 +35,7 @@ trait LaravelNovaTrait
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      *
-     * @return array
      * @throws \Laravel\Nova\Exceptions\HelperNotSupported
      */
     public function logFields(NovaRequest $request): array
@@ -120,9 +118,7 @@ trait LaravelNovaTrait
     }
 
     /**
-     * @param array|null $data
      *
-     * @return string
      */
     protected function formatArrayForIndex(?array $data): string
     {
@@ -130,6 +126,6 @@ trait LaravelNovaTrait
 
         $return = $data[0] ?? '';
 
-        return count($data) > 1 ? $return . ' ...' : $return;
+        return count($data) > 1 ? $return.' ...' : $return;
     }
 }

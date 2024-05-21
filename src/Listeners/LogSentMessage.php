@@ -4,7 +4,6 @@ namespace NormanHuth\LaravelEmailLog\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Events\MessageSent;
-use NormanHuth\LaravelEmailLog\Models\EmailLog;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Part\DataPart;
 
@@ -45,27 +44,25 @@ class LogSentMessage implements ShouldQueue
     }
 
     /**
-     * @param \Symfony\Component\Mime\Address[]|null $addresses
+     * @param  \Symfony\Component\Mime\Address[]|null  $addresses
      *
-     * @return array
      */
     protected function parseAddresses(?array $addresses): array
     {
         return array_map(
-            fn(Address $address) => $address->toString(),
+            fn (Address $address) => $address->toString(),
             (array) $addresses
         );
     }
 
     /**
-     * @param \Symfony\Component\Mime\Part\DataPart[]|null $attachments
+     * @param  \Symfony\Component\Mime\Part\DataPart[]|null  $attachments
      *
-     * @return array
      */
     protected function parseAttachments(?array $attachments): array
     {
         return array_map(
-            fn(DataPart $attachment) => $attachment->asDebugString(),
+            fn (DataPart $attachment) => $attachment->asDebugString(),
             (array) $attachments
         );
     }
